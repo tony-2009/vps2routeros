@@ -74,8 +74,8 @@ confirm || exit -1
 echo "installing packages"
 #apt-get update -y
 #apt-get install -y qemu-utils pv psmisc parted
-apk update -y
-apk -y qemu-utils pv psmisc parted
+apk update
+apk add qemu-utils pv psmisc parted
 
 echo "download image"
 wget ${ROUTEROS_URL} -O chr.img.zip
