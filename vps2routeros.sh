@@ -72,8 +72,10 @@ echo -e "\nIf you continue, your disk will be formatted and no data will be pres
 confirm || exit -1
 
 echo "installing packages"
-apt-get update -y
-apt-get install -y qemu-utils pv psmisc parted
+#apt-get update -y
+#apt-get install -y qemu-utils pv psmisc parted
+apk update -y
+apk -y qemu-utils pv psmisc parted
 
 echo "download image"
 wget ${ROUTEROS_URL} -O chr.img.zip
