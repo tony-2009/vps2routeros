@@ -82,7 +82,7 @@ wget ${ROUTEROS_URL} -O chr.img.zip
 
 echo "unzip image"
 gunzip -c chr.img.zip > chr.img
-
+ 
 echo "convert image"
 qemu-img convert chr.img -O qcow2 chr.qcow2
 qemu-img resize chr.qcow2 `fdisk $DISK -l | head -n 1 | cut -d',' -f 2 | cut -d' ' -f 2`
